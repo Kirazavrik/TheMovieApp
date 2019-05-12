@@ -31,10 +31,8 @@ class MainActivity : AppCompatActivity(), DownloadCallback<String> {
     }
 
     override fun updateFromDownload(result: String?) {
-        val collectionType = object : TypeToken<Collection<Title>>() {}.type
-        var titles: Collection<Title> = gson.fromJson(result, collectionType)
-        var title = titles.size
-        networkTest.text = title.toString()
+        val response: Response = gson.fromJson(result, Response::class.java)
+        networkTest.text = response.id.toString()
     }
 
     override fun getActiveNetworkInfo(): NetworkInfo {

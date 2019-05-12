@@ -1,19 +1,15 @@
 package com.example.themovieapp
 import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.Expose
 
 
-data class Response(
+class Response {
+
     @SerializedName("id")
-    val id: Int,
+    @Expose
+    var id: Int? = null
     @SerializedName("titles")
-    val titles: List<Title>
-)
+    @Expose
+    var titles: List<Title>? = null
 
-data class Title(
-    @SerializedName("iso_3166_1")
-    val iso31661: String,
-    @SerializedName("title")
-    val title: String,
-    @SerializedName("type")
-    val type: String
-)
+}
