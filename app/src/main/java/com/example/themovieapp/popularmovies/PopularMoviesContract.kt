@@ -7,9 +7,13 @@ interface PopularMoviesContract {
 
     interface View: BaseView<Presenter> {
 
+       // fun showPopularMovies(movies: List<Movie>)
+
     }
 
     interface Presenter: BasePresenter {
+
+        fun loadPopularMovies()
 
     }
 }
