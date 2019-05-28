@@ -13,7 +13,7 @@ interface PopularMoviesContract {
 
     interface Presenter: BasePresenter {
 
-        fun loadPopularMovies()
+        // fun loadPopularMovies()
 
     }
 }

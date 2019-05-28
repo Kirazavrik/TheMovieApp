@@ -17,4 +17,9 @@ class PopularMoviesFragment : Fragment(), PopularMoviesContract.View {
 
         return root
     }
+
+
+    companion object {
+        fun newInstance() = PopularMoviesFragment()
+    }
 }
