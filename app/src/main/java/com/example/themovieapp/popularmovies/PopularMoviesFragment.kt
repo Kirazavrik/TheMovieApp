@@ -13,7 +13,7 @@ class PopularMoviesFragment : Fragment(), PopularMoviesContract.View {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val root = inflater.inflate(R.layout.fragment_popular_movies, container)
+        val root = inflater.inflate(R.layout.fragment_popular_movies, container, false)
 
         return root
     }

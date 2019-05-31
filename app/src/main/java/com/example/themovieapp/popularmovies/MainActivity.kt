@@ -13,17 +13,27 @@ class MainActivity : AppCompatActivity() {
     private var networkFragment: NetworkFragment? = null
     private var downloading = false
 
+    private lateinit var popularMoviesFragment: PopularMoviesFragment
     private lateinit var popularMoviesPresenter: PopularMoviesPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val popularMoviesFragment = supportFragmentManager.findFragmentById(R.id.contentFrame)
                 as PopularMoviesFragment? ?: PopularMoviesFragment.newInstance().also {
             val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.contentFrame, it).commit()
         }
+
+
+        /*
+        popularMoviesFragment = PopularMoviesFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.contentFrame, popularMoviesFragment)
+        transaction.commit()
+        */
 
         popularMoviesPresenter = PopularMoviesPresenter(popularMoviesFragment)
     }
