@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
 import com.example.themovieapp.NetworkFragment
 import com.example.themovieapp.R
+import com.example.themovieapp.data.source.MoviesDataSource
+import com.example.themovieapp.data.source.MoviesRepository
+import com.example.themovieapp.data.source.TaskMockDataSource
 import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     private var networkFragment: NetworkFragment? = null
     private var downloading = false
 
+    private val moviesDataSource = TaskMockDataSource()
+    private val moviesRepository = MoviesRepository(moviesDataSource)
     private lateinit var popularMoviesFragment: PopularMoviesFragment
     private lateinit var popularMoviesPresenter: PopularMoviesPresenter
 
@@ -35,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
         */
 
-        popularMoviesPresenter = PopularMoviesPresenter(popularMoviesFragment)
+        popularMoviesPresenter = PopularMoviesPresenter(moviesRepository, popularMoviesFragment)
     }
 
 }
