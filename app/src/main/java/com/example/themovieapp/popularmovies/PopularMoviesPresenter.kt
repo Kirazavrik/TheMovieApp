@@ -19,11 +19,13 @@ class PopularMoviesPresenter(val moviesRepository: MoviesRepository,
     }
 
     private fun loadPopularMovies(forceUpdate: Boolean) {
+
         moviesRepository.getMovies(object: MoviesDataSource.LoadMoviesCallback {
             override fun onMoviesLoaded(movies: List<Movie>) {
                 moviesView.showPopularMovies(movies)
             }
         })
+
     }
 
     override fun start() {

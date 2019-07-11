@@ -5,9 +5,15 @@
                 android:layout_height="match_parent">
 
 
+    <TextView
+            android:id="@+id/networkTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_above="@+id/recycler"
+            android:layout_marginBottom="-19dp"/>
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_width="381dp"
+            android:layout_height="681dp" android:layout_marginTop="48dp" android:layout_alignParentTop="true"/>
 
 </RelativeLayout>
