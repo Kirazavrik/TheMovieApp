@@ -4,8 +4,9 @@ import com.example.themovieapp.data.Movie
 import com.example.themovieapp.data.source.MoviesDataSource
 import com.example.themovieapp.data.source.MoviesRepository
 
-class PopularMoviesPresenter(val moviesRepository: MoviesRepository,
-                             val moviesView: PopularMoviesContract.View) : PopularMoviesContract.Presenter {
+class PopularMoviesPresenter(
+    private val moviesRepository: MoviesRepository,
+    val moviesView: PopularMoviesContract.View) : PopularMoviesContract.Presenter {
 
     private var firstAppLoad = true
 
@@ -30,5 +31,9 @@ class PopularMoviesPresenter(val moviesRepository: MoviesRepository,
 
     override fun start() {
         loadPopularMovies()
+    }
+
+    override fun start(query: String) {
+
     }
 }

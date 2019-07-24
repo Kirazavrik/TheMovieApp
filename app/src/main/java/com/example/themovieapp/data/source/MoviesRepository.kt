@@ -1,13 +1,25 @@
 package com.example.themovieapp.data.source
 
-import com.example.themovieapp.RetrofitDownloadCallback
-import com.example.themovieapp.data.Movie
-
-class MoviesRepository(val mockDataSource: MoviesDataSource) : MoviesDataSource {
+class MoviesRepository(private val dataSource: MoviesDataSource) : MoviesDataSource {
 
     override fun getMovies(callback: MoviesDataSource.LoadMoviesCallback) {
 
-        mockDataSource.getMovies(callback)
+        dataSource.getMovies(callback)
 
+    }
+
+    override fun getSearchedMovies(searchQuery: String, callback: MoviesDataSource.LoadMoviesCallback) {
+        dataSource.getSearchedMovies(searchQuery, callback)
+    }
+
+    companion object {
+
+        private var INSTANCE: MoviesRepository? = null
+
+        @JvmStatic
+        fun getInstance(dataSource: MoviesDataSource): MoviesRepository {
+            return INSTANCE ?: MoviesRepository(dataSource)
+                .apply { INSTANCE = this }
+        }
     }
 }

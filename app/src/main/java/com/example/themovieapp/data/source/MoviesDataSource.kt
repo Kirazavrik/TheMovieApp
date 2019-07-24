@@ -11,4 +11,5 @@ interface MoviesDataSource {
 
     fun getMovies(callback: LoadMoviesCallback)
 
+    fun getSearchedMovies(searchQuery: String, callback: LoadMoviesCallback)
 }
