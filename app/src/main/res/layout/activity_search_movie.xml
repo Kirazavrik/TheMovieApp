@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".popularmovies.MainActivity">
-
-    <ImageButton
-            android:id="@+id/buttonSearch"
-            android:src="@drawable/baseline_search_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        tools:context=".searchmovie.SearchMovieActivity">
 
     <FrameLayout
-            android:id="@+id/contentFrame"
+            android:id="@+id/contentFrameSearchMovie"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
