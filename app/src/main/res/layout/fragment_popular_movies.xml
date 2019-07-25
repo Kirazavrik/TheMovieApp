@@ -4,16 +4,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewPopularMovies"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="48dp" />
 
-    <TextView
-            android:id="@+id/networkTest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:layout_above="@+id/recycler"
-            android:layout_marginBottom="-19dp"/>
-
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="381dp"
-            android:layout_height="681dp" android:layout_marginTop="48dp" android:layout_alignParentTop="true"/>
+        <ProgressBar
+                android:id="@+id/progressBarPopularMovies"
+                android:visibility="visible"
+                android:layout_gravity="center"
+                android:scaleX="0.10"
+                android:scaleY="0.10"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
 </RelativeLayout>

@@ -8,13 +8,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import com.bumptech.glide.Glide
 import com.example.themovieapp.BaseAdapter
 import com.example.themovieapp.R
 import com.example.themovieapp.data.Movie
-import kotlinx.android.synthetic.main.item_popular_movie.view.*
+import kotlinx.android.synthetic.main.fragment_popular_movies.*
 
 class PopularMoviesFragment : Fragment(), PopularMoviesContract.View {
 
@@ -33,10 +30,12 @@ class PopularMoviesFragment : Fragment(), PopularMoviesContract.View {
 
         viewManager = LinearLayoutManager(activity)
         viewAdapter = MyAdapter(movies, this)
-        recyclerView = root.findViewById<RecyclerView>(R.id.recycler).apply {
+        recyclerView = root.findViewById<RecyclerView>(R.id.recyclerViewPopularMovies).apply {
             layoutManager = viewManager
             adapter = viewAdapter
         }
+
+        recyclerView.visibility = View.GONE
 
         return root
     }
@@ -48,7 +47,8 @@ class PopularMoviesFragment : Fragment(), PopularMoviesContract.View {
 
 
     override fun showPopularMovies(movies: List<Movie>) {
-
+        progressBarPopularMovies.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
         val newAdapter = MyAdapter(movies, this)
         recyclerView.adapter = newAdapter
         viewAdapter.notifyDataSetChanged()

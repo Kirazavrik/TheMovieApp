@@ -4,10 +4,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerViewSearchMovies"
             android:layout_width="381dp"
-            android:layout_height="681dp" android:layout_marginTop="48dp" android:layout_alignParentTop="true"/>
+            android:layout_height="681dp"
+            android:layout_marginTop="48dp"
+            android:layout_alignParentTop="true"/>
+
+    <ProgressBar
+            android:id="@+id/progressBarSearchMovies"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:scaleX="0.10"
+            android:scaleY="0.10"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 </RelativeLayout>

@@ -26,7 +26,6 @@ class PopularMoviesPresenter(
                 moviesView.showPopularMovies(movies)
             }
         })
-
     }
 
     override fun start() {

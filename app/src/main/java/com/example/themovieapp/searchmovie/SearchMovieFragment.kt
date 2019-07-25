@@ -11,6 +11,7 @@ import com.example.themovieapp.BaseAdapter
 import com.example.themovieapp.R
 import com.example.themovieapp.data.Movie
 import com.example.themovieapp.popularmovies.PopularMoviesFragment
+import kotlinx.android.synthetic.main.fragment_search_movies.*
 
 class SearchMovieFragment : Fragment(), SearchMoviesContract.View {
 
@@ -36,6 +37,8 @@ class SearchMovieFragment : Fragment(), SearchMoviesContract.View {
             adapter = viewAdapter
         }
 
+        recyclerView.visibility = View.GONE
+
         return root
     }
 
@@ -44,6 +47,8 @@ class SearchMovieFragment : Fragment(), SearchMoviesContract.View {
         presenter.start(searchQuery)
     }
     override fun showSerchedMovies(movies: List<Movie>) {
+        progressBarSearchMovies.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
         val newAdapter = SearchMovieFragment.MyAdapter(movies, this)
         recyclerView.adapter = newAdapter
         viewAdapter.notifyDataSetChanged()
